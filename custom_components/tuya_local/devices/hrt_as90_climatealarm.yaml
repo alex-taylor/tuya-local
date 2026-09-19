@@ -3,6 +3,9 @@ products:
   - id: rocfghml4gy1vvr8
     manufacturer: HRT
     model: AS90
+  - id: hgua57vs12ztpyov
+    manufacturer: iKiKin
+    model: AS91W-T1U-WIFI
 entities:
   - entity: sensor
     class: temperature
@@ -33,13 +36,13 @@ entities:
         name: sensor
         unit: "%"
         class: measurement
-  - entity: switch
-    name: Charger
-    category: config
+  - entity: binary_sensor
+    name: Charging
+    category: diagnostic
     dps:
       - id: 8
         type: boolean
-        name: switch
+        name: sensor
   - entity: select
     translation_key: temperature_unit
     category: config
