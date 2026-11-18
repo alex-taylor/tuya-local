@@ -1,0 +1,50 @@
+name: Smart Ceiling Light
+products:
+  - id: 8lfjddgkjacbgbn7
+    manufacturer: Yoledy
+    model_id: D027
+entities:
+  - entity: light
+    dps:
+      - id: 20
+        name: switch
+        type: boolean
+      - id: 22
+        name: brightness
+        type: integer
+        range:
+          min: 1
+          max: 100
+      - id: 23
+        name: color_temp
+        type: integer
+        range:
+          min: 2700
+          max: 6500
+      - id: 101
+        name: effect
+        type: string
+        mapping:
+          - dps_val: summer
+            value: Summer Mode
+          - dps_val: read
+            value: Reading Mode
+          - dps_val: winter
+            value: Winter Mode
+          - dps_val: movie
+            value: Movie Mode
+          - dps_val: romantic
+            value: Romantic Mode
+          - dps_val: leisure
+            value: Relax Mode
+  - entity: time
+    translation_key: timer
+    dps:
+      - id: 26
+        type: integer
+        name: minute
+        range:
+          min: 0
+          max: 480
+        mapping:
+          - step: 15
